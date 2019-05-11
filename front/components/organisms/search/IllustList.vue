@@ -66,7 +66,7 @@ export default class IllustList extends Vue {
   @Prop({
     required: true
   })
-  illustList: Illust[]
+  illustList: Illust[] = []
 }
 </script>
 

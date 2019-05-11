@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package grpc.testing.echo;
+option go_package = "echo";
+
+message Empty {
+}
+
+message EchoRequest {
+  string message = 1;
+}
+
+message EchoResponse {
+  string message = 1;
+  int32 message_count = 2;
+}
+
+service EchoService {
+  rpc Echo(EchoRequest) returns (EchoResponse);
+}

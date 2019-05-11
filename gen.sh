@@ -1,11 +1,11 @@
 #!/bin/bash
 
-mkdir -p ./backend/echo
-mkdir -p ./frontend/proto
+mkdir -p ./server/echo
+mkdir -p ./front/proto
 
 protoc \
-    --go_out=plugins=grpc:./backend/echo \
-    --plugin=protoc-gen-ts=./frontend/node_modules/.bin/protoc-gen-ts \
-    --js_out=import_style=commonjs,binary:./frontend/proto \
-    --ts_out=service=true:./frontend/proto \
+    --go_out=plugins=grpc:./server/echo \
+    --plugin=protoc-gen-ts=./front/node_modules/.bin/protoc-gen-ts \
+    --js_out=import_style=commonjs,binary:./front/proto \
+    --ts_out=service=true:./front/proto \
     ./echo.proto
